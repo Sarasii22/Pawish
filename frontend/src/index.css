@@ -13,14 +13,14 @@
   --primary-color2: rgba(194, 152, 12, 0.9);
   --header3: #773E40;
   --border-color: #050505;
-  --text-color1: black;
+  --text-color1: #E4E1DF;
   --text-color2: rgb(73, 70, 70);
   --text-color3: #555;
   --button-padding : 10px;
   --box-shadow: 2px 2px 10px 14px rgba(0, 0, 0, 0.1);
   --button-hover1: #f08a04;
   --button-hover2:rgba(194, 152, 12, 0.9);
-  --background-color1:rgb(138, 112, 101);
+  --background-color1:#65564C;
   --background-color2:rgb(12, 11, 11);
 }
 
