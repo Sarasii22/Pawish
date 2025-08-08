@@ -14,9 +14,9 @@
   --primary-color1: #000000;
   --primary-color2: rgba(255, 255, 255, 0.9);
   --header3: #773E40;
-  --border-color: #050505;
+  --border-color1: #221813;
   --text-color1: #E4E1DF;
-  --text-color2: rgb(73, 70, 70);
+  --text-color2: #381D1E;
   --text-color3: #555;
   --hero-color: #D6C4B8;
   --button-padding : 10px;
@@ -24,7 +24,7 @@
   --button-hover1: #f08a04;
   --button-hover2:rgba(194, 152, 12, 0.9);
   --background-color1:#65564C;
-  --background-color2:rgb(12, 11, 11);
+  --background-color2:#F6F4F2;
 }
 
 body{
