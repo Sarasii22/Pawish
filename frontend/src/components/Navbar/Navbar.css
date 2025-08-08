@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kablammo&family=Kalam:wght@400;700&display=swap');
+
 
 .navbar {
   
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
-  height: 60px;
+  height: 80px;
 }
 
 .navbar-brand {
