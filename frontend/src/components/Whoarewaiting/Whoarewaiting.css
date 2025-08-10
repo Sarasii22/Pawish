@@ -1,0 +1,36 @@
+.Whoarewaiting-content {
+  background-color: var(--background-color2);
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px;
+  min-height: 100vh; 
+}
+
+.Whoarewaiting-content h1 {
+  color: var(--header3);
+  font-family: "Josefin Slab";
+  font-size: 60px;
+  text-align: center; 
+  position: relative;
+  top: -50px; 
+  margin: 0; 
+}
+
+.Whoarewaiting-content .SeeMore {
+  background-color: var(--hero-color);
+  position: absolute;
+  left: 45%;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700; /* Use font-weight instead of font-style for boldness */
+  cursor: pointer;
+  width: 160px;
+  height: 50px;
+  font-family: "Josefin Slab", serif;
+  margin-top: 20px; /* Add space between h1 and button */
+}
+
+.Whoarewaiting-content .SeeMore:hover {
+  background-color: #c0b39a;
+}

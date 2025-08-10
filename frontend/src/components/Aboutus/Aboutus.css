@@ -1,0 +1,90 @@
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--hero-color);
+}
+
+.about-content {
+  max-width: 70%;
+  text-align: center;
+  align-content: center;
+  padding-left: 180px;
+  position: relative;
+  top: -80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content h1 {
+  font-size: 65px;
+  
+  padding-bottom: 20px;
+  font-family: 'Josefin Slab', serif;
+  color: var(--header3);
+  line-height: 5rem;
+}
+
+.about-content p {
+  font-size: 20px;
+  font-weight: 500;
+  
+  font-family: kalam, cursive;
+  color: var(--text-color3);
+  text-align: center;
+  align-content: center;
+  max-width: 450px;
+}
+
+.about-image img {
+  border-radius: 50px;
+  max-width: 471px;
+  height: 689px;
+  position: relative;
+  left: -120px;
+  top: -100px;
+  filter: drop-shadow(-25px 30px 4px rgba(0, 0, 0, 0.5));
+}
+
+
+.about-cards-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  max-width: 775px;
+  max-height: 212px;
+  position: relative;
+  top: -180px;
+}
+
+
+.about-card {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--background-color3);
+  width: 217px;
+  height: 212px;
+  box-shadow: inset 0px 4px 4px 0px rgb(0,0,0,0.25);
+}
+
+.about-card img {
+  max-width: 75px;
+  max-height: 53px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.about-card h1 {
+  font-size: 40px;
+  margin: 10px 0;
+  font-weight: 540;
+}
+
+.about-card h4 {
+  font-size: 20px;
+  font-family: kalam, sans-serif;
+  font-weight: 100;
+  
+}

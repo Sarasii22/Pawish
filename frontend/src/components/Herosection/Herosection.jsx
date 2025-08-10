@@ -1,9 +1,9 @@
 import React from "react";
 import './Herosection.css';
-import d1image from "../../assets/d1.jpg"; // Adjust the path as necessary
-import donationImage from "../../assets/donation.png"; // Adjust the path as necessary
-import adoptionImage from "../../assets/pet heart.png"; // Adjust the path as necessary
-import volunteerImage from "../../assets/volenteer.png"; // Adjust the path as necessary
+import d1image from "../../assets/hero/d1.jpg"; // Adjust the path as necessary
+import donationImage from "../../assets/hero/donation.png"; // Adjust the path as necessary
+import adoptionImage from "../../assets/hero/pet heart.png"; // Adjust the path as necessary
+import volunteerImage from "../../assets/hero/volenteer.png"; // Adjust the path as necessary
 
 const Herosection = () => {
   return (

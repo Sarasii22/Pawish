@@ -17,18 +17,15 @@
   --border-color1: #221813;
   --text-color1: #E4E1DF;
   --text-color2: #381D1E;
-  --text-color3: #555;
+  --text-color3: #443026;
   --hero-color: #D6C4B8;
-  --button-padding : 10px;
-  --box-shadow: 2px 2px 10px 14px rgba(0, 0, 0, 0.1);
-  --button-hover1: #f08a04;
-  --button-hover2:rgba(194, 152, 12, 0.9);
   --background-color1:#65564C;
   --background-color2:#F6F4F2;
+  --background-color3: #A39B94;
 }
 
 body{
-  background:var(--primary-color1);
+  background:var(--background-color2);
 }
 
 a{
