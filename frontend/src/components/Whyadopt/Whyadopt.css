@@ -1,6 +1,7 @@
 .why-adopt{
     align-items: center;
     justify-content: center;
+    padding-bottom: 120px;
 }
 
 
@@ -10,7 +11,7 @@
   font-family: 'Josefin Slab', serif;
   color: var(--header3);
   line-height: 5rem;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -42,7 +43,7 @@
   height: 381px;
   position: relative;
   left: 100px;
-  top: -50px;
+  top: -120px;
   filter: drop-shadow(15px -20px 4px rgba(0, 0, 0, 0.5));
 }
 
@@ -51,9 +52,11 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  max-width: 1248px;
+  margin-bottom: 20px;
   max-height: 268px;
   position: relative;
+  top: -50px;
+
 }
 
 
@@ -63,7 +66,7 @@
   background-color: var(--background-color4);
   width: 376px;
   height: 268px;
-  box-shadow: inset 0px 4px 4px 0px rgb(0,0,0,0.25);
+  
 }
 
 .why-adopt-reasons img {
@@ -71,6 +74,7 @@
   max-height: 56px;
   margin-bottom: 10px;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 .why-adopt-reasons h3 {
@@ -79,11 +83,18 @@
   margin: 10px 0;
   font-weight: 540;
   color: var(--text-color4);
+  padding-bottom: 20px;
 }
 
 .why-adopt-reasons p {
   font-size: 20px;
   font-family: kalam, sans-serif;
-  font-weight: 100;
+  font-weight: 50;
   
 }
+
+.button {
+  position: absolute;
+  left: 45%;
+}
+

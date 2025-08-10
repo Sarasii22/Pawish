@@ -30,6 +30,9 @@ const Whyadopt = () => {
                 <p>Discover the pet whose personality perfectly complements yours.</p>
             </div>
         </div>
+        <div className="adopt-button">
+            <button className="button">Adopt Now</button>
+        </div>
         
         </div>
     );
