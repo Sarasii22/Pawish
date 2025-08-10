@@ -1,15 +1,36 @@
 import React from "react";
+import './Whyadopt.css'; // Ensure you have the CSS file for styling
+import whyAdoptImage from "../../assets/whyadopt/cat 2.jpg"; //
+import saveImage from "../../assets/about/paws.png"; // Adjust the path as necessary
+import unconditionalImage from "../../assets/whyadopt/heart.png"; // Adjust the path as necessary
+import findImage from "../../assets/whyadopt/search.png"; // Adjust the path as necessary
 
 const Whyadopt = () => {
     return (
         <div className="why-adopt">
-        <h2>Why Adopt?</h2>
-        <p>Adopting a pet can bring joy and companionship to your life.</p>
-        <ul>
-            <li>Save a life</li>
-            <li>Gain a loyal friend</li>
-            <li>Support your local community</li>
-        </ul>
+        <h2>Why Adopted a Pet ?</h2>
+        <div className="why-adopt-content">
+            <p>Adopting a pet not only brings joy and companionship into your life, but it also saves lives. When you adopt, you give a homeless animal a second chance at life and provide them with a loving forever home. Every pet deserves a chance to be loved, so consider adoption today!</p>
+            <img src={whyAdoptImage} alt="Why Adopt" />
+        </div>
+        <div className="why-adopt-reasons">
+            <div className="reason">
+                <img src={saveImage} alt="Save a Life" />
+                <h3>Save a Life</h3>
+                <p>Give a homeless pet to second chance at happiness and loving home.</p>
+            </div>
+            <div className="reason">
+                <img src={unconditionalImage} alt="Unconditional Love" />
+                <h3>Unconditional Love</h3>
+                <p>Experience the endless affection only a rescued pet can give.</p>
+            </div>
+            <div className="reason">
+                <img src={findImage} alt="Find Your Match" />
+                <h3>Find Your Match</h3>
+                <p>Discover the pet whose personality perfectly complements yours.</p>
+            </div>
+        </div>
+        
         </div>
     );
     }
