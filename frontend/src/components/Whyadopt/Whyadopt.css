@@ -51,8 +51,8 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  max-width: 775px;
-  max-height: 212px;
+  max-width: 1248px;
+  max-height: 268px;
   position: relative;
 }
 
@@ -60,23 +60,25 @@
 .why-adopt-reasons .reason {
   text-align: center;
   padding: 20px;
-  background-color: var(--background-color3);
-  width: 217px;
-  height: 212px;
+  background-color: var(--background-color4);
+  width: 376px;
+  height: 268px;
   box-shadow: inset 0px 4px 4px 0px rgb(0,0,0,0.25);
 }
 
 .why-adopt-reasons img {
-  max-width: 75px;
-  max-height: 53px;
+  max-width: 49px;
+  max-height: 56px;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
 .why-adopt-reasons h3 {
   font-size: 40px;
+  font-family: Josefin Slab, serif;
   margin: 10px 0;
   font-weight: 540;
+  color: var(--text-color4);
 }
 
 .why-adopt-reasons p {
