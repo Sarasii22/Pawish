@@ -1,0 +1,238 @@
+.contact {
+  display: flex;
+  flex-direction: column; /* Stack the title on top and columns below */
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  
+}
+
+/* Title Section */
+.title {
+  text-align: center; /* Center-align the text inside the title */
+  padding: auto;
+  width: 100%; /* Occupy full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the text horizontally */
+  justify-content: center; 
+  margin-top: 25px;
+}
+
+.title h4 {
+  font-size: 18px;
+  color: var(--text-color3); /* Subtle color for the heading */
+  margin-top: 50px;
+  text-transform: capitalize;
+}
+
+.title h1 {
+  font-size: 36px;
+  color: var(--text-color1); /* Main text color */
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+/* Contact Columns Section */
+.contact-col {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: center; /* Center both columns horizontally */
+  align-items: center; /* Center both columns vertically */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 80px; /* Space between columns */
+  width: 100%; /* Ensure full width below the title */
+  max-width: 1200px; /* Limit maximum width for better layout */
+  padding: 40px; /* Add padding on sides */
+}
+
+/* Left Column (class 1) */
+.contact-col .col1 {
+  flex: 1; /* Allow this column to grow */
+  max-width: 100%; /* Limit maximum width */
+  box-sizing: border-box;
+  text-align: left; /* Center-align text inside the column */
+}
+
+.contact-col .col1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color1);
+}
+
+.contact-col .col1 p {
+  font-size: 1rem;
+  color: var(--text-color3);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.contact-col .col1 ul {
+  list-style: none;
+  padding: 5px;
+  text-align: left; /* Align list items to the left */
+  margin: 0 auto;
+}
+
+.contact-col .col1 ul li {
+  font-size: 1rem;
+  color: var(--text-color1);
+  margin-bottom: 8px;
+}
+
+.contact-col .col1 ul li img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+/* Right Column (class 2) */
+.contact-col .col2 {
+   
+  max-width: 100%; /* Limit maximum width */
+  text-align: left; /* Center-align text inside the column */
+  
+  box-sizing: content-box;
+}
+
+.contact-col .col2 form input,
+.contact-col .col2 form textarea {
+
+  display: block;
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  resize: none;
+  margin-top: 5px;
+}
+
+.contact-col .col2 span {
+  display: block;
+  margin: 20px 0;
+}
+
+.contact-col .col2 .btn {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  width: 150px;
+  font-size: 1.1rem;
+  font-weight: 650;
+  background-color: var(--primary-color2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.contact-col .col2 .btn:hover {
+  background-color: var(--button-hover1);
+}
+
+/* Devices with max-width of 1000px */
+@media (max-width: 1000px) {
+  .contact {
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+  }
+
+  .contact-col {
+    flex-direction: column; /* Stack the columns vertically */
+    gap: 40px; /* Reduce the gap between columns */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .contact-col .col1,
+  .contact-col .col2 {
+    max-width: 100%; /* Make columns take full width */
+    text-align: center; /* Center-align text */
+  }
+
+  .contact-col .col1 h3 {
+    font-size: 1.2rem; /* Reduce heading font size */
+  }
+
+  .contact-col .col1 p {
+    font-size: 0.95rem; /* Adjust font size for smaller screens */
+  }
+
+  .contact-col .col1 ul li {
+    font-size: 0.9rem; /* Adjust list item font size */
+  }
+
+  .contact-col .col1 ul li img {
+    width: 12px; /* Reduce icon size */
+    height: 12px;
+  }
+
+  .title h1 {
+    font-size: 32px; /* Reduce the title size for readability */
+  }
+
+  .title h4 {
+    font-size: 16px; /* Reduce subtitle size */
+  }
+
+  .contact-col .col2 form input,
+  .contact-col .col2 form textarea {
+    padding: 8px; /* Adjust padding for input and textarea */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .contact-col .col2 .btn {
+    width: 120px; /* Adjust button width */
+    font-size: 1rem;
+    padding: 8px;
+    margin: 0 auto; /* Center the button */
+    display: block; /* Ensure the button behaves like a block element */
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 28px; /* Smaller font size for titles */
+    margin-bottom: 15px;
+  }
+
+  .title h4 {
+    font-size: 14px; /* Adjust font size for subtitles */
+    margin-top: 30px;
+  }
+
+  .contact {
+    padding: 15px;
+  }
+
+  .contact-col {
+    gap: 20px; /* Smaller gap for limited screen space */
+  }
+
+  .contact-col .col1 ul li img {
+    width: 12px; /* Smaller icons */
+    height: 12px;
+  }
+
+  .contact-col .col2 form input,
+  .contact-col .col2 form textarea {
+    padding: 6px; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .contact-col .col2 .btn {
+    width: 100px; /* Adjust button size */
+    font-size: 0.8rem;
+    padding: 5px;
+    margin: 0 auto; /* Center the button */
+    display: block; 
+    
+  }
+}
+
+
+

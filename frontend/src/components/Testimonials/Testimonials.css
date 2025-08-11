@@ -1,0 +1,159 @@
+
+.testimonial {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+}
+
+.testimonial-title {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 100px;
+}
+
+
+.testimonial-title h2 {
+  font-size: 60px;
+  color: var(--text-color5);
+  font-family: Josefin Slab, serif;
+  margin-bottom: 0;
+}
+
+.testimonial-card {
+  background: var(--background-color6);
+  border-radius: 50px;
+  padding: 25px;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: solid 0.5px var(--primary-color1);
+}
+
+.slick-slide > div {
+  margin: 0 15px;
+}
+
+.slick-list {
+  margin: 0 -15px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  font-family: Kalam, cursive;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.testimonial-card-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.testimonial-card-top img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.testimonial-card-top-text h4 {
+  font-size: 1.125rem;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 600;
+}
+
+.testimonial-card-top-text p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Slick Slider Adjustments */
+.slick-list {
+  padding: 0 10px; /* Slight padding on edges */
+}
+
+.slick-dots {
+  bottom: -40px; /* More space below */
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #d1d5db;
+  opacity: 0.8;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff7f50;
+  opacity: 1;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(31, 41, 55, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #ff7f50;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-title h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial {
+    padding: 40px 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9375rem;
+  }
+
+  .testimonial-card-bottom img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-title h2 {
+    font-size: 1.75rem;
+  }
+}

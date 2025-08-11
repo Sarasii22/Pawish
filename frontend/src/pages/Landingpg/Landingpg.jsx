@@ -5,7 +5,9 @@ import Aboutus from "../../components/Aboutus/Aboutus";
 import Whoarewaiting from "../../components/Whoarewaiting/Whoarewaiting";
 import Whyadopt from "../../components/Whyadopt/Whyadopt";
 import Support from "../../components/Support/Support";
-import Testimonials from "../../components/Testinomials/Testinomials";
+import Testimonials from "../../components/Testimonials/Testimonials";
+import Contacts from "../../components/Contacts/Contacts";
+
 
 const Landingpg = () => {
     return (
@@ -16,6 +18,7 @@ const Landingpg = () => {
         <Whyadopt />
         <Support />
         <Testimonials />
+        <Contacts />
         {/* Additional components can be added here */}
         </div>
     );
