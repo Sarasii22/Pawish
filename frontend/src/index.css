@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kablammo&family=Kalam:wght@400;700&family=Josefin+Slab:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Kablammo&family=Kalam:wght@400;700&family=Josefin+Slab:wght@400;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -21,6 +20,7 @@
   --text-color4: #4B352A;
   --text-color5: #3B322C;
   --text-color6: #7B4019;
+  --text-color7: #C7C0BD;
   --hero-color: #D6C4B8;
   --background-color1:#65564C;
   --background-color2:#F6F4F2;

@@ -1,9 +1,9 @@
 .contact {
   background-color: var(--hero-color);
-  padding: 40px 20px;
+  padding: 40px;
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  gap: 100px;
   flex-wrap: wrap;
   
 }
@@ -13,10 +13,9 @@
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  padding-left: 10px;
   padding-right: 40px;
   text-align: center;
-  flex: 1 1 350px;
+  padding-left: 100px;
   align-items: center;
 }
 
@@ -47,7 +46,6 @@
   text-align: center;
   justify-content: center;
   list-style: none;
-  padding: 0;
   align-items: center;
   font-size: 1.1rem;
   font-family: 'Kalam', cursive;
@@ -70,11 +68,10 @@
 }
 
 .column2 form {
-  max-width: 400px;
+  position: relative;
+  right: -55%;
   background-color: #fff;
   padding: 24px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
 
 .column2 label {
@@ -90,7 +87,7 @@
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   font-family: 'Kalam', cursive;
 }
 
@@ -99,18 +96,20 @@
 }
 
 .column2 .btn {
-  background-color: var(--btn-color);
+  background-color: var(--primary-color1);
   color: var(--primary-color2);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Josefin Slab', serif;
+  
   font-size: 1.1rem;
+  width: 100%;
 }
 
 .column2 .btn:hover {
-  background-color: var(--primary-color1);
+  background-color: var(--background-color3);
+  transition: background-color 0.3s ease;
 }
 
 .column2 span {
