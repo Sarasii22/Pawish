@@ -40,7 +40,7 @@ const Footer = () => {
   return (
     <div>
     <div className='footer-container'>
-      <div className='fquick_links_title'>
+      <div className='title'>
         <h4>PAWISH</h4>
         <p>We connect rescued and homeless pets with loving hearts, giving them the home, help, and hope they deserve.</p>
         <div className='social_links'>

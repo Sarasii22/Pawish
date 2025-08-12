@@ -16,6 +16,7 @@
   );
   opacity: 0.95;
   flex-wrap: wrap;
+  max-height: 334px !important;
 }
 
 /* Individual Sections */
@@ -24,11 +25,24 @@
   text-align: left;
   color: var(--text-color1);
   font-size: 0.8rem;
+  max-width: 350px; /* Limit width for better readability */
   
 }
 
-.footer-container .fquick_links_title h4 {
+.footer-container .title h4{
   font-family: Kablammo, sans-serif; 
+  color: var(--text-color1);
+  font-size: 40px;
+}
+
+.footer-container .title p {
+  font-family: Kalam, sans-serif;
+  color: var(--text-color1);
+  font-size: 20px;
+}
+
+.footer-container .fquick_links_title h4 {
+  
   color: var(--text-color1);
 }
 
