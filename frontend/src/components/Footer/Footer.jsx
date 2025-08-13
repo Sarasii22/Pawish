@@ -60,6 +60,7 @@ const Footer = () => {
       </div>
       
       <div className='fquick_links_title'>
+        <div className='links'>
         <h4>Quick Links</h4>
         <ListGroup className='fquick_links'>
           {
@@ -70,42 +71,42 @@ const Footer = () => {
             ))
           }
         </ListGroup>
-        
+       </div> 
       </div>
       
       
-      <div className='fquick_links_title'>
+      <div className='contacts'>
         <h4>Contact Us</h4>
         <ListGroup className='fquick_links'>
             <ListGroupItem className='fphone'>
-            <h6>
+            
               <span>
                 <img src={picon} alt='' />
               </span>
                
-              </h6>
+              
               <p>
                 +94 71 654 8745
               </p>
           </ListGroupItem>
           <ListGroupItem className='flocation'>
-            <h6>
+            
               <span>
                 <img src={licon} alt='' />
               </span>
         
-              </h6>
+              
               <p>
                 Pawish (Pvt) Ltd, Colombo 4, Sri Lanka
               </p>
           </ListGroupItem>
           <ListGroupItem className='femail'>
-            <h6>
+           
               <span>
                 <img src={eicon} alt='' />
               </span>
                  
-              </h6>
+             
               <p>
               pawishpvt@gmail.com
               </p>

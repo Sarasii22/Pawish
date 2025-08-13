@@ -1,9 +1,7 @@
-/* Footer Container */
 .footer-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
   padding: 20px 40px;
   background: linear-gradient(
     160deg,
@@ -15,155 +13,115 @@
     #0E0D0C 100%
   );
   opacity: 0.95;
-  flex-wrap: wrap;
-  max-height: 334px !important;
+  max-height: 334px;
 }
 
-/* Individual Sections */
 .fquick_links_title {
-  margin: 0 15px; /* Uniform gap for all sections */
   text-align: left;
   color: var(--text-color1);
   font-size: 0.8rem;
-  max-width: 350px; /* Limit width for better readability */
   
 }
 
-.footer-container .title h4{
+.footer-container .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ max-width: 300px;
+  margin: 0 auto;
+}
+
+.footer-container .title h4 {
   font-family: Kablammo, sans-serif; 
   color: var(--text-color1);
+  text-align: left !important;
   font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 2%;
 }
 
 .footer-container .title p {
   font-family: Kalam, sans-serif;
   color: var(--text-color1);
   font-size: 20px;
+  font-weight: lighter;
+
 }
 
 .footer-container .fquick_links_title h4 {
-  
-  color: var(--text-color1);
+  font-family: Kalam, sans-serif;
+  color: var(--text-color8);
+  font-size: 30px;
+  font-weight: lighter;
+
 }
 
-.fquick_links_title p {
-  margin: 0;
-  justify-content: justify;
-  justify-items: justify;
+.fquick_links_title .fquick_links p,  .fquick_links_title .fquick_links .link1{
+  margin: 5px 10px;
   text-align: justify;
-  margin-right: 10px;
-  color: #e4bebe;
+  padding-bottom: 10px !important;
+  color: var(--text-color7);
+  font-size: 20px;
+  font-family: Josefin Slab, serif;
+   
 }
 
-.fquick_links_title h4 {
-  margin-bottom: 5px !important;
-  font-weight: bold;
-  color: #eee0a6;
-  font-size: 1rem;
-  font-family: 'Calibri', sans-serif; /* Changed to Calibri */
-}
-
-/* Paragraph Section (First .fquick_links_title) */
-.footer-container .fquick_links_title:nth-child(1) {
-  flex: 3;
-}
-
-/* Discover Section */
-.footer-container .fquick_links_title:nth-child(2) {
-  flex: 1;
-}
-
-/* Quick Links Section */
-.footer-container .fquick_links_title:nth-child(3) {
-  flex: 1;
-}
-
-/* Contact Us Section */
-.footer-container .fquick_links_title:nth-child(4) {
-  flex: 3;
-}
-
-.fquick_links_title h6 {
-  margin-bottom: 0px !important;
-  font-weight: bold;
-  color: #ffffff;
-  font-size: 1rem;
-  font-family: 'Calibri', sans-serif; /* Changed to Calibri */
-}
-
-/* Quick Links List */
 .fquick_links {
   list-style: none;
-  padding: 0;
+  padding: 10px;
 }
 
 .fquick_links li {
-  margin: 8px 0;
+  margin: 8px 10px;
 }
 
 .fquick_links a {
-  text-decoration: none;
-  color: #ffffff;
+  margin: 20px 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px !important;
+  text-align: justify;
+  color: var(--text-color7);
+  font-size: 20px;
+  font-family: Josefin Slab, serif;
   transition: color 0.3s ease;
-  font-family: 'Calibri', sans-serif; /* Changed to Calibri */
 }
 
 .fquick_links a:hover {
-  color: #ffcc00;
+  color: var(--text-color8);
 }
 
-/* Contact Section Specifics */
 .flocation,
 .femail,
 .fphone {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  text-align: left;
+  
   margin: 8px 0;
-}
-
-.flocation h6,
-.femail h6,
-.fphone h6 {
-  margin: 0;
-  font-weight: bold;
-  color: #c9ba81;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
 }
 
 .flocation img,
 .femail img,
 .fphone img {
-  width: 16px;
-  height: 16px;
+  width: 30px;
+  height: 25px;
   margin-right: 8px;
 }
 
-.flocation p,
-.femail p,
-.fphone p {
-  color: #ffffff;
-  margin: 0 0 0 8px;
-  font-size: 0.8rem;
-  font-family: 'Calibri', sans-serif; /* Changed to Calibri */
-  flex: 1;
-}
-
-/* Footer Title - unchanged as per your instruction */
 .ftitle {
   text-align: center;
   padding: 20px;
-  background-color: #04183d;
+  background-color: var(--primary-color2);
 }
 
-.ftitle h2 {
+.ftitle .copyright p {
   margin: 0;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
-  color: #ffcc00;
+  color: var(--primary-color1);
+  font-family: Josefin Slab, serif;
 }
 
 .social_links {
@@ -184,25 +142,16 @@
   transform: scale(1.1);
 }
 
-/* Copyright Section */
-.copyright p {
-  color: #ffffff;
-  margin: 10px 0 0;
-  font-size: 0.8rem;
-  font-family: 'Calibri', sans-serif; /* Already Calibri, kept as is */
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: center;
     text-align: center;
+    gap: 20px;
   }
 
   .fquick_links_title {
-    margin: 15px 0; /* Consistent gap on mobile */
-    flex: none;
+    margin: 15px 0;
     width: 100%;
   }
 
