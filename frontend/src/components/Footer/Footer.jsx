@@ -71,7 +71,7 @@ const Footer = () => {
             ))
           }
         </ListGroup>
-       </div> 
+       
       </div>
       
       
@@ -113,6 +113,7 @@ const Footer = () => {
           </ListGroupItem>
           
         </ListGroup>
+        </div> 
       </div>
     </div>
     <div className='ftitle'>
