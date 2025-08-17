@@ -1,0 +1,114 @@
+.login {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/pexels-biggi-3421290-29760088.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Homebtn{
+  
+  left: 42px;
+  top: 50px;
+  position: absolute;
+  font-family: Josefin Slab;
+  color: var(--btn-color);
+  font-size: 30px;
+}
+
+.Adminbtn{
+  right: 100px;
+  top: 50px;
+  position: absolute;
+  font-family: Josefin Slab;
+  color: var(--btn-color);
+  font-size: 22px;
+}
+
+.Homebtn:hover, .Adminbtn:hover{
+  color: var(--text-color1);
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/* Login container styling */
+.login-container {
+  max-width: 653px !important;
+  max-height: 609px !important;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(4, 4, 4, 0.49); /* Slightly transparent white background */
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color:var(--hero-color);
+  font-family: Karma;
+  font-weight: lighter;
+}
+
+.login-container FormGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: regular;
+  color: var(--text-color7);
+  font-family: Kalam;
+  margin-top: 25px;
+  text-align: left;
+}
+
+.login-container input {
+  width: 450px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+
+.login-container input:focus {
+  border-color: #d1b518;
+  outline: none;
+}
+
+.login-button {
+  width: 401px;
+  height: 45px;
+  padding: 10px;
+  background-color: var(--btn-color);
+  color: var(--text-color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.login-button:hover {
+  background-color:var(--button-hover1);
+}
+
+.login-footer {
+  margin-top: 22px;
+  font-size: 16px;
+  font-family: Cabin;
+  color: var(--text-color8);
+}
+
+.login-footer a {
+  color: var(--btn-color);
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+  color: var(--text-color1);
+}

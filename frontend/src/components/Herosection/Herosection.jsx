@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'
 import './Herosection.css';
 import d1image from "../../assets/hero/d1.jpg"; // Adjust the path as necessary
 import donationImage from "../../assets/hero/donation.png"; // Adjust the path as necessary
@@ -6,6 +7,13 @@ import adoptionImage from "../../assets/hero/pet heart.png"; // Adjust the path 
 import volunteerImage from "../../assets/hero/volenteer.png"; // Adjust the path as necessary
 
 const Herosection = () => {
+
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  }
+
   return (
     <div>
     <div className="hero-section">
@@ -15,7 +23,8 @@ const Herosection = () => {
       <div className="hero-content">
         <h1>Not Only People Need a Home</h1>
         <p>Every soul deserves the warmth of a home, even the ones that walk on four legs. Open your heart, and you might just find your best friend waiting</p>
-        <button className="hero-button">Login</button>
+        <button className="hero-button" onClick={handleLoginClick}>Login</button>
+        
       </div>
     </div>
     <div className="card-section">
