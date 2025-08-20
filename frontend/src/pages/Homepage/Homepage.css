@@ -1,0 +1,21 @@
+.landing-page{
+    background-color: var(--background-color2);
+}
+
+.landing-page .landing-page-text h1 {
+    font-family: 'Abhaya Libre', serif;
+    color: var(--primary-color2); 
+    text-shadow: 10px 15px 4px rgba(250, 250, 250, 0.25); 
+    background-image: url("../../assets/image 2.png"); 
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 513px;
+    margin: 50px 0;
+    font-size: 40px;
+    
+}

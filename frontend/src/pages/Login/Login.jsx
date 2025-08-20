@@ -1,37 +1,26 @@
-
 import React, { useState } from 'react';
 import { Form, FormGroup, FormLabel, FormControl } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
-  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
   });
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleLoginClick = async (e) => {
+  const handleLoginClick = (e) => {
     e.preventDefault();
     if (!credentials.email || !credentials.password) {
       alert('Please fill in all required fields.');
       return;
     }
-
-    try {
-      const res = await axios.post('http://localhost:5000/api/login', credentials);
-      localStorage.setItem('token', res.data.token);
-      alert('Login successful!');
-      navigate('/login/loginhome'); // Adjust if this route changes
-    } catch (error) {
-      console.error(error.response?.data);
-      alert(error.response?.data?.error || 'Login failed. Please try again.');
-    }
+    setSuccess(true);
   };
 
   return (
@@ -65,10 +54,15 @@ const Login = () => {
               required
             />
           </FormGroup>
-          <button variant="primary" type="submit" className="login-button ">
+          <Link to="/homepage" variant="primary" type="submit" className="login-button ">
             Login
-          </button>
+          </Link>
         </Form>
+        {success && (
+          <div className="login-success">
+            <p>Login successful! (No backend connection)</p>
+          </div>
+        )}
         <div className="login-footer">
           <p>
             Don't have an account? <Link to="/register">Register</Link>
