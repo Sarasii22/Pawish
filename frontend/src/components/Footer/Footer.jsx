@@ -17,16 +17,16 @@ const quick_links = [
   },
   {
     name: 'Our Pets',
-    link: 'pets'
+    link: '/pets'
   },
   
   {
     name: 'Donate',
-    link: 'donate'
+    link: '/donate'
   },
   {
     name: 'Pet Alert',
-    link: 'petalert'
+    link: '/petalert'
   },
   
 ]

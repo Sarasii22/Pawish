@@ -44,7 +44,7 @@ a{
   cursor: pointer;
 }
 
-.button{
+.button, .logout-btn{
   background-color: var(--btn-color);
   color: var(--primary-color2);
   font-size: 20px;
@@ -52,12 +52,23 @@ a{
   padding: 10px 10px;
   border: none;
   cursor: pointer;
-  width: 150px;
+  width: 180px;
   height: 50px;
   align-items: center;
   text-align: center;
   justify-content: center;
   font-weight: 550;
+}
+
+.logout-btn{
+  position: absolute;
+  color: var(--primary-color1);
+  right: 50px;
+  top: 100px;
+  width: 160px;
+  height: 40px;
+  text-align: center;
+ 
 }
 
 .container{
