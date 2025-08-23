@@ -1,8 +1,45 @@
-.pets{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 20px;
+.pets {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../../assets/our-pets.png') no-repeat center center/cover;
 }
 
+.pets-header {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.logout-btn:hover {
+  background-color: #a9a9a9;
+}
+
+.petspage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.petspage-text h1 {
+  font-size: 2.5em;
+  margin: 0;
+  line-height: 1.2;
+}
