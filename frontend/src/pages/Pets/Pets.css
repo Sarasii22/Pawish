@@ -1,45 +1,97 @@
-.pets {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url('../../assets/our-pets.png') no-repeat center center/cover;
-}
-
-.pets-header {
-  position: relative;
+.petspage-text h1 {
+  font-family: Josefin Slab, serif;
+  color: var(--primary-color2); 
+  text-shadow: 10px 5px 4px rgba(250, 250, 250, 0.25); 
+  -webkit-text-stroke: 2px #000000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+  background-image: url("../../assets/our-pets.png"); 
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  height: 513px;
+  margin: 80px 0;
+  
+  font-size: 80px;
 }
 
-.logout-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: #d3d3d3;
+.pets-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  padding: 20px 80px;
+  position: relative; /* Ensure grid context is preserved */
+  margin-top: 100px; /* Offset to accommodate the protruding image */
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+.pet-card {
+  background-color: var(--primary-color2);
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Removed overflow: hidden to allow the image to extend */
+  text-align: center;
+  width: 316px;
+  height: 403px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content from the top */
+  position: relative; /* Relative positioning for absolute child */
+  padding-top: 0; /* Removed padding to let image extend naturally */
+}
+
+.pet-image {
+  width: 210px; /* Fixed width for a circle */
+  height: 200px; /* Match width for a perfect circle */
+  object-fit: cover; /* Ensures the image covers the circular area */
+  object-position: 50% 10%; /* Focuses on the pet's face */
+  border-radius: 50%; /* Makes the image round */
+  position: absolute; /* Position absolutely within .pet-card */
+  top: -80px; /* Half the image height to extend 50% over the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  z-index: 1; /* Ensure image is above the card */
+}
+
+.pet-info {
+  padding: 10px;
+  flex-grow: 1; /* Allows info to take remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 75px; /* Space to start below the image's bottom edge */
+}
+
+.pet-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.pet-info p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.im-waiting-btn {
+  padding: 8px 15px;
+  background-color: #d4a373;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
-  color: black;
+  margin-top: 10px;
 }
 
-.logout-btn:hover {
-  background-color: #a9a9a9;
-}
-
-.petspage-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.petspage-text h1 {
-  font-size: 2.5em;
-  margin: 0;
-  line-height: 1.2;
+.im-waiting-btn:hover {
+  background-color: #b88c5f;
 }
