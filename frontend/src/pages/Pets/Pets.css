@@ -95,3 +95,92 @@
 .im-waiting-btn:hover {
   background-color: #b88c5f;
 }
+
+.adoptpln-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  padding: 20px 80px;
+  position: relative; /* Ensure grid context is preserved */
+  margin-top: 100px; /* Offset to accommodate the protruding image */
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+.adoptpln-section h2, .pets-footer h2 {
+  color: var(--header3);
+  font-family: "Josefin Slab";
+  font-size: 60px;
+  text-align: center; 
+  position: relative; 
+  margin: 0; 
+}
+
+.adoptpln-container .adoptpln-card{
+  background-color: var(--hero-color);
+  border-radius: 10px;
+  box-shadow: 10px 15px 4px rgba(0, 0, 0, 0.25);
+  /* Removed overflow: hidden to allow the image to extend */
+  text-align: center;
+  width: 385px;
+  height: 712px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content from the top */
+  position: relative; /* Relative positioning for absolute child */
+  padding-top: 50px; 
+}
+
+.adoptpln-info h3{
+  font-family: Karma, serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: #393634;
+}
+
+.adoptpln-image{
+  padding: 25px;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.adoptpln-info p{
+  font-family: Kalam, cursive;
+  font-size: 20px;
+  font-weight: lighter;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #EBE2DD;
+  margin: 30px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.gallery-container {
+  margin: 50px 0px;
+  background-color: var(--background-color6);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 80px;
+  justify-items: center;
+  align-items: center;
+}
+
+.gallery-item {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
