@@ -1,0 +1,136 @@
+.donate-container{
+    margin: 0 0 150px 0;
+}
+
+.donate-title {
+  background-image: url("../../assets/donate page.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 628px;
+  margin-top: 80px ;
+}
+
+.donate-title h1 {
+  font-family: Josefin Slab, serif;
+  font-size: 85px;
+  color: var(--text-color7);
+}
+
+.donate-title p {
+  font-family: Kalam, cursive;
+  font-size: 30px;
+  color: var(--text-color1);
+}
+
+.donate-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  position: relative;
+  top: -200px;
+}
+
+.donate-card {
+  background-color: var(--hero-color);
+  border-radius: 10px;
+  text-align: center;
+  width: 290.83px;
+  height: 310px;
+  margin: 8px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 10px 10px 4px rgba(0, 0, 0, 0.25);
+  outline: 3px solid #382820;
+}
+
+.donate-card img {
+  width: 75px;
+  height: 75px;
+  margin: 10px;
+}
+
+.donate-info h3 {
+  font-family: 'Abhaya Libre Medium', serif;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.donate-info p {
+  font-family: Kalam, cursive;
+  font-size: 30px;
+  font-weight: lighter;
+  color: #4C4139;
+  margin-top: 10px;
+}
+
+.donation-form {
+  background-color: var(--btn-color);
+  padding: 20px;
+  margin: 0px auto 50px auto;
+  width: 1200px;
+  height: 1283px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-form h2 {
+  font-family: Josefin Slab, serif;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #382820;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+  background-color: var(--text-color8);
+  border-radius: 20px;
+  padding: 40px;
+  width: 1049px;
+  height: 443px;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0;
+  flex-wrap: nowrap;
+}
+
+.form-group label {
+  font-family: 'Josefin Slab';
+  font-size: 40px;
+  font-weight: bold;
+  width: 320px; 
+  text-align: left;
+  margin-right: 20px;
+}
+
+.form-group input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 514px; /* Adjusted width for inputs */
+  height: 40px;
+  box-sizing: border-box;
+  outline: 1px solid #D9D9D9;
+  text-align: left;
+}

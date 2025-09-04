@@ -8,6 +8,8 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import HomePage from './pages/Homepage/Homepage';
 import Pets from './pages/Pets/Pets'
+import Donate from './pages/Donate/Donate';
+import PetAlert from './pages/PetAlert/PetAlert';
 
 // Layout component to include Navbar and Footer
 const Layout = ({ children }) => (
@@ -23,10 +25,13 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={ <Layout> <Landingpg /> </Layout>} />
-        <Route  path='/pets'  element={  <Layout>  <Pets />  </Layout>  }  />
+        
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route  path="/homepage"  element={  <Layout>  <HomePage />  </Layout>  }  />
+        <Route  path='/pets'  element={  <Layout>  <Pets />  </Layout>  }  />
+        <Route  path='/donate'  element={  <Layout>  <Donate />  </Layout>  }  />
+        <Route  path='/alert'  element={  <Layout>  <PetAlert />  </Layout>  }  />
         {/* Add more routes as needed */}
       </Routes>
     </div>

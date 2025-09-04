@@ -1,0 +1,29 @@
+.petalert-container{
+    margin: 0 0 150px 0;
+}
+
+.petalert-title {
+  background-image: url("../../assets/petalert.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 628px;
+  margin-top: 80px ;
+}
+
+.petalert-title h1 {
+  font-family: Josefin Slab, serif;
+  font-size: 85px;
+  color: var(--text-color7);
+}
+
+.petalert-title p {
+  font-family: Kalam, cursive;
+  font-size: 30px;
+  color: var(--text-color1);
+}
