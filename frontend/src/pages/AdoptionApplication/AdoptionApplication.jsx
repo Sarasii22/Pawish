@@ -1,8 +1,8 @@
 import React from "react";
-import "./PetAlert.css";
+import "./AdoptionApplication.css";
 import { Link } from "react-router-dom";
 
-const PetAlert = () => {
+const AdoptionApplication = () => {
     return (
         <div className="petalert-container">
             <Link to="/login" className="logout-btn">
@@ -166,4 +166,4 @@ const PetAlert = () => {
     );
 };
 
-export default PetAlert;
+export default AdoptionApplication;

@@ -47,7 +47,7 @@ a{
   cursor: pointer;
 }
 
-.button, .logout-btn{
+.button, .logout-btn, .submit-btn{
   background-color: var(--btn-color);
   color: var(--primary-color2);
   font-size: 20px;
@@ -61,6 +61,14 @@ a{
   text-align: center;
   justify-content: center;
   font-weight: 550;
+}
+
+.submit-btn{
+  background-color: var(--hero-color);
+  justify-content: center;
+  color: var(--primary-color1);
+  margin: 30px;
+  width: 160px;
 }
 
 .logout-btn{

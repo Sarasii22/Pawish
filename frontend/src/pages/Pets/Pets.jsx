@@ -25,7 +25,10 @@ const PetCard = ({ name, age, location, timeAgo, image }) => {
         <p>Age: {age}</p>
         <p>Location: {location}</p>
         <p>{timeAgo}</p>
-        <button className="im-waiting-btn">I'm Waiting</button>
+        <Link to="/application" className="im-waiting-link"> 
+          <button className="im-waiting-btn">I'm Waiting</button>
+        </Link>
+
       </div>
     </div>
   );
