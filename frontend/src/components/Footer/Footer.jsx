@@ -26,7 +26,7 @@ const quick_links = [
   },
   {
     name: 'Pet Alert',
-    link: '/petalert'
+    link: '/alert'
   },
   
 ]

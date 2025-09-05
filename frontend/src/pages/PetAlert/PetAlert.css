@@ -1,29 +1,155 @@
-.petalert-container{
+
+.petalert-container {
     margin: 0 0 150px 0;
 }
 
 .petalert-title {
-  background-image: url("../../assets/petalert.png");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url("../../assets/petalert.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 628px;
+    margin-top: 80px;
+}
+
+.petalert-title h1 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 85px;
+    font-weight: bold;
+    color: var(--primary-color2);
+    text-shadow: inset 5px 10px 4px rgba(250, 250, 250, 0.25);
+    -webkit-text-stroke: 2px #382820;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #382820;
+}
+
+.petalert-title p {
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: var(--text-color1);
+}
+
+.petalert-guide {
+    margin: 10px 0 50px 0;
+}
+
+.petalert-guide h2 {
+    font-family: 'Karma', serif;
+    font-size: 40px;
+    font-weight: 300; /* Changed from lighter to explicit weight */
+    color: #6F3A17;
+    text-align: left;
+    padding: 50px 50px 0 50px;
+}
+
+.petalert-steps {
+    display: flex;
+    flex-direction: row;
+    gap: 180px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.petalert-steps ul {
+    width: 572px;
+}
+
+.petalert-steps li {
+    font-family: 'Cabin', sans-serif; /* Ensure Cabin is applied */
+    font-size: 22px;
+    font-weight: 100; /* Changed from lighter to explicit weight */
+    color: var(--primary-color1);
+    background: linear-gradient(
+        90deg,
+        #F4E0C3 0%,
+        #D2B18B 26%,
+        #C1996F 75%,
+        #B08153 100%
+    );
+    padding: 20px;
+    padding-left: 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 572px;
+    height: 60px;
+    margin-bottom: 20px;
+    text-align: left;
+    list-style-position: inside; /* Move bullets inside the background */
+}
+
+.petalert-steps .step h3 {
+    font-family: 'Karma', serif;
+    font-size: 40px;
+    font-weight: 300; /* Changed from lighter to explicit weight */
+    color: #382820;
+    margin-bottom: 10px;
+    background-color: #D9D9D9;
+    padding: 25px;
+    box-shadow: 15px 20px 4px rgba(0, 0, 0, 0.25);
+    width: 412px;
+    height: 474px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: 5px;
+}
+
+.petalert-form{
+  height: 2675px;
+}
+
+.petalert-form .form-section h3{
+  font-family: Karma;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: left !important;
+  justify-self: left;
+}
+
+/* Override width for radio inputs */
+.form-group input[type="radio"] {
+    width: auto;
+    margin-left: 0px;
+}
+
+/* Styles for the upload container and button */
+.upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.petalert-form .form-group .image-upload{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.petalert-form .form-text .form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 790px;
+}
+
+.petalert-form .form-text .form-group label, .petalert-form .form-text .form-group textarea, .petalert-form .checkbox-container{
+  width: 860px;
+}
+
+.petalert-form .checkbox-container{
+  margin-top: 30px;
+       
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 628px;
-  margin-top: 80px ;
-}
-
-.petalert-title h1 {
-  font-family: Josefin Slab, serif;
-  font-size: 85px;
-  color: var(--text-color7);
-}
-
-.petalert-title p {
-  font-family: Kalam, cursive;
-  font-size: 30px;
-  color: var(--text-color1);
 }
