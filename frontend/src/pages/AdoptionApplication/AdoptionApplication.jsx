@@ -4,31 +4,33 @@ import { Link } from "react-router-dom";
 
 const AdoptionApplication = () => {
     return (
-        <div className="petalert-container">
+        <div className="adopapp-container">
             <Link to="/login" className="logout-btn">
                 Log Out
             </Link>
-            <div className="petalert-title">
-                <h1>Help a Pet Find a Home</h1>
-                <p>Every pet deserves love. If you know one waiting for a second chance, let us help you give them hope.</p>
+            <div className="adopapp-title">
+                <h1>Adopt a Pet</h1>
+                
             </div>
-            <div className="petalert-guide">
-                <h2>Before Posting ...</h2>
-                <div className="petalert-steps">
-                    <div className="step">
-                        <ul>
-                            <li>Make sure you’re ready to let go.</li>
-                            <li>Use clear, kind photos.</li>
-                            <li>Be honest and detailed.</li>
-                            <li>You are responsible until they’re adopted.</li>
-                            <li>Include your location.</li>
-                            <li>Tell their story.</li>
-                            <li>No selling of pets allowed.</li>
-                        </ul>
-                    </div>
+            <div className="adopapp-guide">
+                
+                <div className="adopapp-steps">
                     <div className="step">
                         <h3>You’re not just posting an alert—you’re giving a life a chance to be loved.</h3>
                     </div>
+                    <div className="step">
+                        <h2>Before you apply ...</h2>
+                        <ul>
+                            <li> Be honest in the form to help us match you with the right pet.</li>
+                            <li>Pets need time, love, and patience to adjust to a new home.</li>
+                            <li> Make sure your daily routine allows time for care and play.</li>
+                            <li>Talk with your family or housemates before adopting.</li>
+                            <li>Some pets may need special care—be prepared.</li>
+                            <li>A quick home check or interview may be part of the process.</li>
+                            <li>You're changing a life—thank you for choosing adoption!</li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
             <div className="petalert-form">

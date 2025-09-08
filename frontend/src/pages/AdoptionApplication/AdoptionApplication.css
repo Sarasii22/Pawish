@@ -1,0 +1,215 @@
+.adopapp-container{
+    margin: 0 0 150px 0;
+}
+
+.adopapp-container .adopapp-title h1 {
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Josefin Slab;
+    font-size:85px;
+    margin: 120px 0 50px 0;
+    color: var(--header3);
+    
+}
+
+
+
+
+.adopapp-guide {
+    margin: 10px 0 50px 0;
+}
+
+.adopapp-steps .step h2 {
+    font-family: 'Karma', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #6F3A17;
+    text-align: left;
+    padding: 50px 50px 50px 50px;
+}
+
+.adopapp-steps {
+    display: flex;
+    flex-direction: row;
+    gap: 180px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.adopapp-steps ul {
+    width: 572px;
+}
+
+.adopapp-steps li {
+    font-family: 'Cabin', sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: var(--primary-color1);
+    background: linear-gradient(
+        90deg,
+        #F4E0C3 0%,
+        #D2B18B 26%,
+        #C1996F 75%,
+        #B08153 100%
+    );
+    padding: 20px;
+    padding-left: 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 672px;
+    height: 60px;
+    margin-bottom: 20px;
+    text-align: left;
+    list-style-position: inside;
+}
+
+.adopapp-steps .step h3 {
+    font-family: 'Karma', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #382820;
+    margin-bottom: 10px;
+    background-color: #D9D9D9;
+    padding: 25px;
+    box-shadow: 15px 20px 4px rgba(0, 0, 0, 0.25);
+    width: 412px;
+    height: 474px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: 5px;
+}
+
+.petalert-form {
+    height: 2550px;
+    padding-top: 100px;
+}
+
+.petalert-form .form-section {
+    text-align: left;
+}
+
+.petalert-form .form-section h3 {
+    font-family: 'Karma', serif;
+    font-size: 40px;
+    font-weight: 300;
+    text-align: left !important;
+    margin-bottom: 20px;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+    margin-left: 0px;
+}
+
+.form-group select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 514px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: 1px solid #D9D9D9;
+    text-align: left;
+    background-color: var(--primary-color2);
+}
+
+.age-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.age-selector input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: 1px solid #D9D9D9;
+    text-align: left;
+    background-color: var(--primary-color2);
+}
+
+.age-selector select {
+    width: 254px;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.petalert-form .form-group .image-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.petalert-form .form-text .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 790px;
+}
+
+.petalert-form .form-text .form-group label,
+.petalert-form .form-text .form-group textarea,
+.petalert-form .checkbox-container {
+    width: 860px;
+}
+
+.petalert-form .checkbox-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px;
+}
+
+.checkbox-container .checkbox-label {
+    width: 860px;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.checkbox-container .checkbox-input {
+    width: 20px;
+    height: 20px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 514px;
+    text-align: left;
+}
+
+.radio-group .radio-label {
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    justify-content: flex-start;
+    width: auto;
+}
