@@ -5,7 +5,7 @@ const connectDB = require('./db/connect');
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // Parse JSON bodies
+app.use(express.json()); // Must be before route mounting to parse JSON
 
 // Require routes only once
 const authRoutes = require('./routes/auth');
