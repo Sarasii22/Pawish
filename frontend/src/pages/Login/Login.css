@@ -48,7 +48,7 @@
   font-weight: lighter;
 }
 
-.login-container FormGroup {
+.login-container .form input{
   margin-bottom: 15px;
   text-align: left;
 }

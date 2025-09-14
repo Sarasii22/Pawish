@@ -1,74 +1,77 @@
 import React, { useState } from 'react';
-import { Form, FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
-  const [credentials, setCredentials] = useState({
-    email: '',
-    password: '',
-  });
-  const [success, setSuccess] = useState(false);
+  const [credentials, setCredentials] = useState({ email: '', password: '', username: '', isAdmin: false });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleLoginClick = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!credentials.email || !credentials.password) {
-      alert('Please fill in all required fields.');
-      return;
+    try {
+      const url = credentials.isAdmin ? '/api/auth/admin-login' : '/api/auth/login';
+      const data = credentials.isAdmin ? { username: credentials.username, password: credentials.password } : { email: credentials.email, password: credentials.password };
+      const res = await axios.post(`http://localhost:5000${url}`, data);
+      localStorage.setItem('token', res.data.token);
+      navigate(credentials.isAdmin ? '/admin' : '/homepage');
+    } catch (err) {
+      alert(err.response?.data?.error || 'Login failed');
     }
-    setSuccess(true);
   };
 
   return (
     <div className="login">
-      <Link to="/" className="Homebtn">
-        Home
-      </Link>
-      <Link to="/admin" className="Adminbtn">
-        Admin
-      </Link>
-      <div className="login-container">
-        <h1>Login</h1>
-        <Form onSubmit={handleLoginClick}>
-          <FormGroup controlId="email">
-            <FormLabel>Username</FormLabel>
-            <FormControl
-              type="email"
-              placeholder="Email"
-              value={credentials.email}
-              onChange={handleChange}
-              required
-            />
-          </FormGroup>
-          <FormGroup controlId="password" className="mt-3">
-            <FormLabel>Password</FormLabel>
-            <FormControl
-              type="password"
-              placeholder="Password"
-              value={credentials.password}
-              onChange={handleChange}
-              required
-            />
-          </FormGroup>
-          <Link to="/homepage" variant="primary" type="submit" className="login-button ">
-            Login
-          </Link>
-        </Form>
-        {success && (
-          <div className="login-success">
-            <p>Login successful! (No backend connection)</p>
-          </div>
-        )}
-        <div className="login-footer">
-          <p>
-            Don't have an account? <Link to="/register">Register</Link>
-          </p>
-        </div>
-      </div>
+        <Link to="/" className="Homebtn">
+                Home
+        </Link>
+        <button className="Adminbtn" onClick={() => setCredentials({ ...credentials, isAdmin: !credentials.isAdmin })}>
+            Switch to {credentials.isAdmin ? 'User' : 'Admin'} Login
+        </button>
+        
+        <div className="login-container">
+            <h1>Login</h1>
+            <form className="form" onSubmit={handleSubmit}>
+                {credentials.isAdmin ? (
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={credentials.username}
+                    onChange={handleChange}
+                    className="input"
+                    required
+                />
+                ) : (
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={credentials.email}
+                    onChange={handleChange}
+                    className="input"
+                    required
+                />
+                )}
+                <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={credentials.password}
+                onChange={handleChange}
+                className="input"
+                required
+                />
+                <button type="submit" className="login-button">Login</button>
+            </form>
+      
+      <p>Don't have an account? <Link to="/register" className="login-footer">Register</Link></p>
+    </div>
     </div>
   );
 };

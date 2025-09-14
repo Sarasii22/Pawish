@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Pets.css';
-import { Link } from 'react-router-dom';
-import dog1 from '../../assets/petsCards/d1.jpg';
-import cat1 from '../../assets/petsCards/cat.jpg';
-import dog2 from '../../assets/petsCards/dog.jpg';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import img1 from '../../assets/adoptpln/image1.png';
 import img2 from '../../assets/adoptpln/image2.png';
 import img3 from '../../assets/adoptpln/image3.png';
@@ -16,19 +14,18 @@ import g6 from '../../assets/gallery/pet 6.png';
 import g7 from '../../assets/gallery/pet 7.png';
 import g8 from '../../assets/gallery/pet 8.png';
 
-const PetCard = ({ name, age, location, timeAgo, image }) => {
+const PetCard = ({ name, age, location, timeAgo, image, id }) => {
   return (
     <div className="pet-card">
-      <img src={image} alt={name} className="pet-image" />
+      <img src={image ? `http://localhost:5000/${image}` : '/placeholder.jpg'} alt={name} className="pet-image" />
       <div className="pet-info">
         <h3>{name}</h3>
         <p>Age: {age}</p>
         <p>Location: {location}</p>
         <p>{timeAgo}</p>
-        <Link to="/application" className="im-waiting-link"> 
+        <Link to={`/application/${id}`} className="im-waiting-link">
           <button className="im-waiting-btn">I'm Waiting</button>
         </Link>
-
       </div>
     </div>
   );
@@ -47,14 +44,14 @@ const AdoptPlanningCard = ({ topic, image, description }) => {
 };
 
 const Pets = () => {
-  const pets = [
-    { name: "Roy", age: "2 weeks", location: "Colombo", timeAgo: "2 hours ago", image: dog1 },
-    { name: "Roy", age: "4 weeks", location: "Colombo", timeAgo: "2 hours ago", image: cat1 },
-    { name: "Roy", age: "2 weeks", location: "Colombo", timeAgo: "2 hours ago", image: dog2 },
-    { name: "Roy", age: "2 weeks", location: "Colombo", timeAgo: "2 hours ago", image: dog1 },
-    { name: "Roy", age: "2 weeks", location: "Colombo", timeAgo: "2 hours ago", image: cat1 },
-    { name: "Roy", age: "2 weeks", location: "Colombo", timeAgo: "2 hours ago", image: dog2 },
-  ];
+  const [pets, setPets] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/pets')
+      .then(response => setPets(response.data))
+      .catch(error => console.error('Error fetching pets:', error));
+  }, []);
 
   const adoptpln = [
     { topic: "The joy of pet adoption", image: img1, description: "Bringing a pet into your life can be an incredibly rewarding experience, not just for you but for the furry friend you welcome into your home. There’s a special kind of magic that comes with adopting any companion animal." },
@@ -71,22 +68,32 @@ const Pets = () => {
     { src: g6, alt: "Pet 6" },
     { src: g7, alt: "Pet 7" },
     { src: g8, alt: "Pet 8" },
-     // Adjusted to use g1 instead of path if duplicate is intentional
   ];
 
   return (
     <div className="pets">
       <div className="pets-header">
-        <Link to="/login" className="logout-btn">
+        <button className="logout-btn" onClick={() => {
+          localStorage.removeItem('token');
+          navigate('/login');
+        }}>
           Log Out
-        </Link>
+        </button>
         <div className="petspage-text">
           <h1>Find Your New Best Friend</h1>
         </div>
       </div>
       <div className="pets-container">
-        {pets.map((pet, index) => (
-          <PetCard key={index} {...pet} />
+        {pets.map((pet) => (
+          <PetCard
+            key={pet._id}
+            id={pet._id}
+            name={pet.name}
+            age={pet.age}
+            location={pet.location}
+            timeAgo={new Date(pet.createdAt).toLocaleTimeString()}
+            image={pet.profilePhoto}
+          />
         ))}
       </div>
       <div className="adoptpln-section">

@@ -1,25 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; // Assuming you have a CSS file for styling
-
-// Placeholder for authentication context (replace with your actual auth context)
-//const AuthContext = React.createContext();
+import { Link, useNavigate } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
-  //const { isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+  const isAdmin = token && JSON.parse(atob(token.split('.')[1])).role === 'admin';
 
-//   const getHomeLink = () => {
-//     return isLoggedIn ? '/home' : '/landing';
-//   };
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-brand">PAWISH</div>
       <div className="navbar-links">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/pets" className="nav-link">Our Pets</Link>
+        <Link to="/homepage" className="nav-link">Home</Link>
+        <Link to="/pets" className="nav-link">Pets</Link>
         <Link to="/donate" className="nav-link">Donate</Link>
-        <Link to="/alert" className="nav-link">Alert</Link>
+        <Link to="/alert" className="nav-link">Pet Alert</Link>
+        <Link to="/application" className="nav-link">Surrender Pet</Link>
+        {isAdmin && <Link to="/admin" className="nav-link">Admin</Link>}
+        {token && <button className="button" onClick={handleLogout}>Logout</button>}
       </div>
     </nav>
   );

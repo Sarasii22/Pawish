@@ -1,13 +1,12 @@
 const express = require('express');
-const { getPets, addPet } = require('../controllers/pet');
+const { getPets, addPet, editPet, deletePet } = require('../controllers/pet');
+const { adminMiddleware } = require('../middleware/auth');
+const upload = require('../middleware/upload');
 const router = express.Router();
 
 router.get('/', getPets);
-router.post('/', addPet);
-
-const { adminMiddleware } = require('../middleware/auth');
-router.post('/', adminMiddleware, addPet); // In pet.js
-//router.get('/', adminMiddleware, getAdoptions); // In adoption.js
-//router.patch('/:id', adminMiddleware, updateAdoption); // In adoption.js
+router.post('/', adminMiddleware, upload.array('images', 4), addPet);
+router.patch('/:id', adminMiddleware, upload.array('images', 4), editPet);
+router.delete('/:id', adminMiddleware, deletePet);
 
 module.exports = router;

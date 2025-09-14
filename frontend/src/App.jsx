@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -7,37 +6,28 @@ import Landingpg from './pages/Landingpg/Landingpg';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import HomePage from './pages/Homepage/Homepage';
-import Pets from './pages/Pets/Pets'
+import Pets from './pages/Pets/Pets';
 import Donate from './pages/Donate/Donate';
 import PetAlert from './pages/PetAlert/PetAlert';
 import AdoptionApplication from './pages/AdoptionApplication/AdoptionApplication';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
 
-// Layout component to include Navbar and Footer
-const Layout = ({ children }) => (
-  <div>
-    <Navbar />
-    {children}
-    <Footer />
-  </div>
-);
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={ <Layout> <Landingpg /> </Layout>} />
-        
+        <Route path="/" element={<><Navbar /><Landingpg /><Footer /></>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route  path="/homepage"  element={  <Layout>  <HomePage />  </Layout>  }  />
-        <Route  path='/pets'  element={  <Layout>  <Pets />  </Layout>  }  />
-        <Route  path='/donate'  element={  <Layout>  <Donate />  </Layout>  }  />
-        <Route  path='/alert'  element={  <Layout>  <PetAlert />  </Layout>  }  />
-        <Route  path='/application'  element={  <Layout>  <AdoptionApplication />  </Layout>  }  />
-        {/* Add more routes as needed */}
+        <Route path="/homepage" element={<><Navbar /><HomePage /><Footer /></>} />
+        <Route path="/pets" element={<><Navbar /><Pets /><Footer /></>} />
+        <Route path="/donate" element={<><Navbar /><Donate /><Footer /></>} />
+        <Route path="/alert" element={<><Navbar /><PetAlert /><Footer /></>} />
+        <Route path="/application" element={<><Navbar /><AdoptionApplication /><Footer /></>} />
+        <Route path="/admin/*" element={<AdminDashboard />} />
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,95 @@
+.admin-dashboard {
+  background-color: var(--background-color2);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.admin-navbar {
+  background-color: var(--btn-color);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Josefin Slab', serif;
+}
+
+.admin-navbar .navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color2);
+}
+
+.admin-navbar .navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.admin-navbar .nav-link {
+  color: var(--primary-color2);
+  font-size: 18px;
+  font-weight: 550;
+  transition: color 0.3s;
+}
+
+.admin-navbar .nav-link:hover {
+  color: var(--text-color6);
+}
+
+.admin-content {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.admin-content h1 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 40px;
+  color: var(--text-color2);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-section {
+  margin: 40px 0;
+}
+
+.admin-section h2 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 30px;
+  color: var(--text-color2);
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  background-color: var(--text-color8);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px;
+  text-align: left;
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  border-bottom: 1px solid var(--background-color4);
+}
+
+.admin-table th {
+  font-weight: 700;
+  color: var(--text-color2);
+}
+
+.admin-table td {
+  color: var(--text-color5);
+}
+
+.admin-table button {
+  margin-right: 10px;
+}

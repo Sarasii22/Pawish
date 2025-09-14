@@ -6,7 +6,6 @@ const donationSchema = new mongoose.Schema({
   email: { type: String },
   phone: { type: String },
   amount: { type: Number, required: true },
-  // No card details (placeholder for demo)
 }, { timestamps: true });
 
 module.exports = mongoose.model('Donation', donationSchema);

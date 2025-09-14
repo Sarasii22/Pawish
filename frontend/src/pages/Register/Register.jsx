@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { Form, FormGroup } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
@@ -13,12 +14,13 @@ const Register = () => {
     confirmPassword: undefined,
   });
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleLoginClick = (e) => {
+  const handleLoginClick = async (e) => {
     e.preventDefault();
     const { firstName, lastName, country, email, password, confirmPassword } = credentials;
 
@@ -32,7 +34,14 @@ const Register = () => {
       return;
     }
 
-    setSuccess(true);
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/signup', credentials);
+      localStorage.setItem('token', res.data.token);
+      setSuccess(true);
+      navigate('/homepage');
+    } catch (err) {
+      alert(err.response?.data?.error || 'Registration failed');
+    }
   };
 
   return (
@@ -118,7 +127,7 @@ const Register = () => {
           </Form>
           {success && (
             <div className="register-success">
-              <p>Registration successful! (No backend connection)</p>
+              <p>Registration successful!</p>
             </div>
           )}
         </div>
