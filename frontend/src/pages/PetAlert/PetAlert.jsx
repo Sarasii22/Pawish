@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./PetAlert.css";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const PetAlert = () => {
@@ -23,7 +23,10 @@ const PetAlert = () => {
     confirmDetails: false,
     agreePolicies: false,
   });
-  const [files, setFiles] = useState([]);
+  const [profilePhoto, setProfilePhoto] = useState(null);
+  const [image1, setImage1] = useState(null);
+  const [image2, setImage2] = useState(null);
+  const [image3, setImage3] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -34,10 +37,6 @@ const PetAlert = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    setFiles([...e.target.files]);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.confirmDetails || !formData.agreePolicies) {
@@ -46,7 +45,10 @@ const PetAlert = () => {
     }
     const data = new FormData();
     Object.keys(formData).forEach(key => data.append(key, formData[key]));
-    files.forEach(file => data.append('images', file));
+    if (profilePhoto) data.append('images', profilePhoto);
+    if (image1) data.append('images', image1);
+    if (image2) data.append('images', image2);
+    if (image3) data.append('images', image3);
     try {
       const res = await axios.post('http://localhost:5000/api/alerts', data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -71,7 +73,10 @@ const PetAlert = () => {
         confirmDetails: false,
         agreePolicies: false,
       });
-      setFiles([]);
+      setProfilePhoto(null);
+      setImage1(null);
+      setImage2(null);
+      setImage3(null);
       document.querySelectorAll('input[type="file"]').forEach(input => (input.value = ''));
       navigate('/homepage');
     } catch (err) {
@@ -204,20 +209,20 @@ const PetAlert = () => {
             <div className="form-group">
               <label>Pet Profile Photo</label>
               <div className="upload-container">
-                <input type="file" accept="image/*" className="upload-input" onChange={handleFileChange} />
+                <input type="file" accept="image/*" className="upload-input" onChange={(e) => setProfilePhoto(e.target.files[0])} />
               </div>
             </div>
             <div className="form-group">
               <label>Images</label>
               <div className="image-upload">
                 <div className="upload-container">
-                  <input type="file" accept="image/*" className="upload-input" onChange={handleFileChange} />
+                  <input type="file" accept="image/*" className="upload-input" onChange={(e) => setImage1(e.target.files[0])} />
                 </div>
                 <div className="upload-container">
-                  <input type="file" accept="image/*" className="upload-input" onChange={handleFileChange} />
+                  <input type="file" accept="image/*" className="upload-input" onChange={(e) => setImage2(e.target.files[0])} />
                 </div>
                 <div className="upload-container">
-                  <input type="file" accept="image/*" className="upload-input" onChange={handleFileChange} />
+                  <input type="file" accept="image/*" className="upload-input" onChange={(e) => setImage3(e.target.files[0])} />
                 </div>
               </div>
             </div>

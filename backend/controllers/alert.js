@@ -3,8 +3,21 @@ const ApprovedPost = require('../models/ApprovedPost');
 
 exports.submitAlert = async (req, res) => {
   try {
-    const { userId } = req.user;
-    const alertData = { ...req.body, userId };
+    const userId = req.user.id;  // Changed to req.user.id (common in JWT payloads). If your payload uses '_id', change to req.user._id
+    let alertData = { ...req.body, userId };
+    // Combine age and ageUnit
+    if (alertData.age && alertData.ageUnit) {
+      alertData.age = `${alertData.age} ${alertData.ageUnit}`;
+    }
+    delete alertData.ageUnit;
+    // Rename health to healthCondition
+    if (alertData.health) {
+      alertData.healthCondition = alertData.health;
+      delete alertData.health;
+    }
+    // Clean up extraneous fields (optional, but good practice)
+    delete alertData.confirmDetails;
+    delete alertData.agreePolicies;
     if (req.files) {
       alertData.profilePhoto = req.files[0]?.path;
       alertData.images = req.files.map(file => file.path);
