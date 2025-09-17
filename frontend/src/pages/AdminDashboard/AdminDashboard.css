@@ -93,3 +93,20 @@
 .admin-table button {
   margin-right: 10px;
 }
+
+.button1, .button2, .button3 {
+  background-color: var(--btn-color);
+  color: var(--primary-color2);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button1:hover, .button2:hover, .button3:hover {
+  background-color: var(--text-color6);
+  color: white;
+}

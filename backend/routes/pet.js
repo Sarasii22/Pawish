@@ -1,3 +1,6 @@
+// Backend: routes/pet.js
+// No changes needed.
+
 const express = require('express');
 const { getPets, addPet, editPet, deletePet } = require('../controllers/pet');
 const { adminMiddleware } = require('../middleware/auth');

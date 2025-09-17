@@ -1,10 +1,13 @@
+
 const Pet = require('../models/Pet');
 
 exports.getPets = async (req, res) => {
   try {
     const pets = await Pet.find({ status: 'available' });
+    console.log('Returning pets:', pets); // Debug log
     res.json(pets);
   } catch (err) {
+    console.error('Error in getPets:', err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -18,7 +21,7 @@ exports.addPet = async (req, res) => {
     }
     const pet = new Pet(petData);
     await pet.save();
-    res.status(201).json({ message: 'Pet added' });
+    res.status(201).json({ message: 'Pet added', pet });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

@@ -1,21 +1,19 @@
+
 const PetAlert = require('../models/PetAlert');
-const ApprovedPost = require('../models/ApprovedPost');
+const Pet = require('../models/Pet');
 
 exports.submitAlert = async (req, res) => {
   try {
-    const userId = req.user.id;  // Changed to req.user.id (common in JWT payloads). If your payload uses '_id', change to req.user._id
+    const userId = req.user.id; // Assumes JWT payload has 'id'
     let alertData = { ...req.body, userId };
-    // Combine age and ageUnit
     if (alertData.age && alertData.ageUnit) {
       alertData.age = `${alertData.age} ${alertData.ageUnit}`;
     }
     delete alertData.ageUnit;
-    // Rename health to healthCondition
     if (alertData.health) {
       alertData.healthCondition = alertData.health;
       delete alertData.health;
     }
-    // Clean up extraneous fields (optional, but good practice)
     delete alertData.confirmDetails;
     delete alertData.agreePolicies;
     if (req.files) {
@@ -43,19 +41,31 @@ exports.approveAlert = async (req, res) => {
   try {
     const { id } = req.params;
     const alert = await PetAlert.findByIdAndUpdate(id, { status: 'approved' }, { new: true });
-    const approvedPost = new ApprovedPost({
-      alertId: id,
-      petName: alert.petName,
+    if (!alert) {
+      return res.status(404).json({ error: 'Alert not found' });
+    }
+    const newPet = new Pet({
+      name: alert.petName,
       species: alert.species,
       breed: alert.breed,
       age: alert.age,
       gender: alert.gender,
+      location: alert.cityTown || 'Unknown', // Ensure location is set
       profilePhoto: alert.profilePhoto,
-      images: alert.images,
-      cityTown: alert.cityTown,
+      images: alert.images || [],
+      behavior: alert.behavior,
+      healthCondition: alert.healthCondition,
+      goodWith: alert.goodWith,
+      story: alert.story,
+      reason: alert.reason,
+      address: alert.address,
+      phone: alert.phone,
+      email: alert.email,
+      userId: alert.userId,
+      status: 'available'
     });
-    await approvedPost.save();
-    res.json({ message: 'Alert approved', approvedPost });
+    await newPet.save();
+    res.json({ message: 'Alert approved and added to adoptable pets', pet: newPet });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

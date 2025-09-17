@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, Routes, Route } from 'react-router-dom';
 import './AdminDashboard.css';
@@ -109,15 +110,22 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleUpdateAlert = async (id, status) => {
+  const handleUpdateAlert = async (id, action) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/api/alerts/${id}/${status}`, {
+      const res = await axios.patch(`http://localhost:5000/api/alerts/${id}/${action}`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
-      setAlerts(alerts.map(alert => alert._id === id ? { ...alert, status } : alert));
+      setAlerts(alerts.filter(alert => alert._id !== id)); // Remove from pending list
       alert(res.data.message);
+      if (action === 'approve') {
+        // Optionally refresh pets to reflect new pet immediately
+        const petRes = await axios.get('http://localhost:5000/api/pets', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        });
+        setPets(petRes.data);
+      }
     } catch (err) {
-      alert(err.response?.data?.error || 'Error updating alert');
+      alert(err.response?.data?.error || `Error ${action}ing alert`);
     }
   };
 
@@ -178,8 +186,8 @@ const AdminDashboard = () => {
                           <td>{pet.breed}</td>
                           <td>{pet.age}</td>
                           <td>
-                            <button className="button" onClick={() => navigate(`/admin/pets/edit/${pet._id}`)}>Edit</button>
-                            <button className="button" onClick={() => handleDeletePet(pet._id)}>Delete</button>
+                            <button className="button1" onClick={() => navigate(`/admin/pets/edit/${pet._id}`)}>Edit</button>
+                            <button className="button2" onClick={() => handleDeletePet(pet._id)}>Delete</button>
                           </td>
                         </tr>
                       ))}
@@ -211,8 +219,8 @@ const AdminDashboard = () => {
                           <td>{user.email}</td>
                           <td>{user.country}</td>
                           <td>
-                            <button className="button" onClick={() => navigate(`/admin/users/edit/${user._id}`)}>Edit</button>
-                            <button className="button" onClick={() => handleDeleteUser(user._id)}>Delete</button>
+                            <button className="button1" onClick={() => navigate(`/admin/users/edit/${user._id}`)}>Edit</button>
+                            <button className="button2" onClick={() => handleDeleteUser(user._id)}>Delete</button>
                           </td>
                         </tr>
                       ))}
@@ -225,39 +233,39 @@ const AdminDashboard = () => {
           <Route
             path="/applications"
             element={
-                <section className="admin-section">
+              <section className="admin-section">
                 <h2>Adoption Applications</h2>
                 <div className="admin-table">
-                    <table>
+                  <table>
                     <thead>
-                        <tr>
+                      <tr>
                         <th>Pet Name</th>
                         <th>User</th>
                         <th>Email</th>
                         <th>Status</th>
                         <th>Actions</th>
-                        </tr>
+                      </tr>
                     </thead>
                     <tbody>
-                        {applications.map(app => (
+                      {applications.map(app => (
                         <tr key={app._id}>
-                            <td>{app.petId ? app.petId.name : 'N/A'}</td>
-                            <td>{app.userId ? `${app.userId.firstName} ${app.userId.lastName}` : 'N/A'}</td>
-                            <td>{app.email}</td>
-                            <td>{app.status}</td>
-                            <td>
-                            <button className="button" onClick={() => handleUpdateApplication(app._id, 'approved')}>Approve</button>
-                            <button className="button" onClick={() => handleUpdateApplication(app._id, 'rejected')}>Reject</button>
-                            <button className="button" onClick={() => handleDeleteApplication(app._id)}>Delete</button>
-                            </td>
+                          <td>{app.petId ? app.petId.name : 'N/A'}</td>
+                          <td>{app.userId ? `${app.userId.firstName} ${app.userId.lastName}` : 'N/A'}</td>
+                          <td>{app.email}</td>
+                          <td>{app.status}</td>
+                          <td>
+                            <button className="button1" onClick={() => handleUpdateApplication(app._id, 'approved')}>Approve</button>
+                            <button className="button2" onClick={() => handleUpdateApplication(app._id, 'rejected')}>Reject</button>
+                            <button className="button3" onClick={() => handleDeleteApplication(app._id)}>Delete</button>
+                          </td>
                         </tr>
-                        ))}
+                      ))}
                     </tbody>
-                    </table>
+                  </table>
                 </div>
-                </section>
+              </section>
             }
-            />
+          />
           <Route
             path="/alerts"
             element={
@@ -275,19 +283,23 @@ const AdminDashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {alerts.map(alert => (
+                      {alerts.length > 0 ? alerts.map(alert => (
                         <tr key={alert._id}>
                           <td>{alert.petName}</td>
                           <td>{alert.species}</td>
                           <td>{alert.userId ? `${alert.userId.firstName} ${alert.userId.lastName}` : 'N/A'}</td>
                           <td>{alert.status}</td>
                           <td>
-                            <button className="button" onClick={() => handleUpdateAlert(alert._id, 'approve')}>Approve</button>
-                            <button className="button" onClick={() => handleUpdateAlert(alert._id, 'reject')}>Reject</button>
-                            <button className="button" onClick={() => handleDeleteAlert(alert._id)}>Delete</button>
+                            <button className="button1" onClick={() => handleUpdateAlert(alert._id, 'approve')}>Approve</button>
+                            <button className="button2" onClick={() => handleUpdateAlert(alert._id, 'reject')}>Reject</button>
+                            <button className="button3" onClick={() => handleDeleteAlert(alert._id)}>Delete</button>
                           </td>
                         </tr>
-                      ))}
+                      )) : (
+                        <tr>
+                          <td colSpan="5">No pending alerts</td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -316,7 +328,7 @@ const AdminDashboard = () => {
                           <td>{donation.email}</td>
                           <td>{donation.amount}</td>
                           <td>
-                            <button className="button" onClick={() => handleDeleteDonation(donation._id)}>Delete</button>
+                            <button className="button1" onClick={() => handleDeleteDonation(donation._id)}>Delete</button>
                           </td>
                         </tr>
                       ))}
