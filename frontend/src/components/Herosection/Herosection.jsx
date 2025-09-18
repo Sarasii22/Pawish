@@ -13,6 +13,14 @@ const Herosection = ({ buttonText = "Login", navigateTo = "/login" }) => {
     navigate(navigateTo);
   };
 
+  
+  const token = localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   return (
     <div>
       <div className="hero-section">
@@ -20,6 +28,7 @@ const Herosection = ({ buttonText = "Login", navigateTo = "/login" }) => {
           <img src={d1image} alt="Hero" />
         </div>  
         <div className="hero-content">
+          {token && <button className="logout-btn" onClick={handleLogout}>Logout</button>}
           <h1>Not Only People Need a Home</h1>
           <p>Every soul deserves the warmth of a home, even the ones that walk on four legs. Open your heart, and you might just find your best friend waiting</p>
           <button className="hero-button" onClick={handleLoginClick}>{buttonText}</button>

@@ -72,11 +72,11 @@ const Register = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <label htmlFor="country">Country:</label>
+                <label htmlFor="country">District:</label>
                 <input
                   type="text"
                   id="country"
-                  placeholder="Country"
+                  placeholder="District"
                   required
                   onChange={handleChange}
                 />

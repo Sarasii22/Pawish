@@ -16,13 +16,14 @@
   font-size: 30px;
 }
 
-.Adminbtn{
+.login .Adminbtn{
   right: 100px;
   top: 50px;
   position: absolute;
   font-family: Josefin Slab;
   color: var(--btn-color);
-  font-size: 22px;
+  font-size: 20px;
+  background-color: #482415;
 }
 
 .Homebtn:hover, .Adminbtn:hover{
@@ -89,7 +90,7 @@
   border-radius: 10px;
   font-size: 22px;
   cursor: pointer;
-  margin-top: 50px;
+  margin: 20px 20px 20px 20px;
 }
 
 .login-button:hover {
@@ -111,4 +112,8 @@
 .login-footer a:hover {
   text-decoration: underline;
   color: var(--text-color1);
+}
+
+.login p{
+  color: var(--hero-color);
 }

@@ -131,3 +131,9 @@
   pointer-events: none;
   border-radius: 20px;
 }
+
+.hero-content .logout-btn{
+ 
+  top: 20px;
+  
+}
