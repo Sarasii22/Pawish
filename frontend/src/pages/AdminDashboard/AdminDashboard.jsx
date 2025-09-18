@@ -186,7 +186,7 @@ const AdminDashboard = () => {
                           <td>{pet.breed}</td>
                           <td>{pet.age}</td>
                           <td>
-                            <button className="button1" onClick={() => navigate(`/admin/pets/edit/${pet._id}`)}>Edit</button>
+                            {/* <button className="button1" onClick={() => navigate(`/admin/pets/edit/${pet._id}`)}>Edit</button> */}
                             <button className="button2" onClick={() => handleDeletePet(pet._id)}>Delete</button>
                           </td>
                         </tr>
@@ -219,7 +219,7 @@ const AdminDashboard = () => {
                           <td>{user.email}</td>
                           <td>{user.country}</td>
                           <td>
-                            <button className="button1" onClick={() => navigate(`/admin/users/edit/${user._id}`)}>Edit</button>
+                            {/* <button className="button1" onClick={() => navigate(`/admin/users/edit/${user._id}`)}>Edit</button> */}
                             <button className="button2" onClick={() => handleDeleteUser(user._id)}>Delete</button>
                           </td>
                         </tr>

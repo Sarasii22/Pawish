@@ -6,7 +6,7 @@ import donationImage from "../../assets/hero/donation.png";
 import adoptionImage from "../../assets/hero/pet heart.png";
 import volunteerImage from "../../assets/hero/volenteer.png";
 
-const Herosection = ({ buttonText = "Login", navigateTo = "/login" }) => {
+const Herosection = ({ buttonText = "Login", navigateTo = "/login", showLogout = false }) => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -28,7 +28,7 @@ const Herosection = ({ buttonText = "Login", navigateTo = "/login" }) => {
           <img src={d1image} alt="Hero" />
         </div>  
         <div className="hero-content">
-          {token && <button className="logout-btn" onClick={handleLogout}>Logout</button>}
+          {token && showLogout &&<button className="logout-btn" onClick={handleLogout}>Logout</button>}
           <h1>Not Only People Need a Home</h1>
           <p>Every soul deserves the warmth of a home, even the ones that walk on four legs. Open your heart, and you might just find your best friend waiting</p>
           <button className="hero-button" onClick={handleLoginClick}>{buttonText}</button>

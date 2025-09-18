@@ -11,7 +11,7 @@ import Contacts from '../../components/Contacts/Contacts';
 const Homepage = () => {
   return (
     <div className="homepage">
-      <Herosection buttonText="Make a Friend" navigateTo="/pets" />
+      <Herosection buttonText="Make a Friend" navigateTo="/pets" showLogout={true}/>
       <Aboutus />
       <Whoarewaiting />
       <Whyadopt />
