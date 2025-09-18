@@ -50,7 +50,7 @@ exports.approveAlert = async (req, res) => {
       breed: alert.breed,
       age: alert.age,
       gender: alert.gender,
-      location: alert.cityTown || 'Unknown', // Ensure location is set
+      location: alert.cityTown || 'Unknown', 
       profilePhoto: alert.profilePhoto,
       images: alert.images || [],
       behavior: alert.behavior,

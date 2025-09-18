@@ -23,7 +23,7 @@ app.use('/api/pets', require('./routes/pet'));
 app.use('/api/adoptions', require('./routes/adoption'));
 app.use('/api/alerts', require('./routes/alert'));
 app.use('/api/donations', require('./routes/donation'));
-app.use('/api/users', require('./routes/user')); // New user route
+app.use('/api/users', require('./routes/user')); 
 
 const start = async () => {
   await connectDB();

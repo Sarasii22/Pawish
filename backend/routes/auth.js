@@ -1,4 +1,4 @@
-// routes/auth.js
+
 const express = require('express');
 const { signup, login } = require('../controllers/auth');
 const jwt = require('jsonwebtoken');
@@ -6,11 +6,11 @@ const Admin = require('../models/Admin');
 
 const router = express.Router();
 
-// User auth
+
 router.post('/signup', signup);
 router.post('/login', login);
 
-// Admin login (DB + bcrypt check)
+
 router.post('/admin-login', async (req, res) => {
   try {
     const { username, password } = req.body;

@@ -1,5 +1,4 @@
-// Backend: routes/alert.js
-// No changes needed, as the routes are already set up correctly.
+
 
 const express = require('express');
 const { submitAlert, getAlerts, approveAlert, rejectAlert, deleteAlert } = require('../controllers/alert');

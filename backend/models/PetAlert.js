@@ -1,5 +1,3 @@
-// Backend: models/petalert.js
-// No changes needed.
 
 const mongoose = require('mongoose');
 
