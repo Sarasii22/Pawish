@@ -92,7 +92,7 @@ const Donate = () => {
             </div>
           </div>
           <div>
-            <button className="button" type="submit">Donate Now</button>
+            <button className="submit-btn" type="submit">Donate Now</button>
           </div>
         </form>
       </div>

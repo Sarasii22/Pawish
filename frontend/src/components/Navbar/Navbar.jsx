@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/pets" className="nav-link">Pets</Link>
         <Link to="/donate" className="nav-link">Donate</Link>
         <Link to="/alert" className="nav-link">Pet Alert</Link>
-        {<Link to="/application" className="nav-link">Surrender Pet</Link> }
+        {<Link to="/application" className="nav-link">Adopt Pet</Link> }
         {isAdmin && <Link to="/admin" className="nav-link">Admin</Link>}
         
       </div>
