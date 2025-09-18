@@ -4,7 +4,7 @@ const { authMiddleware, adminMiddleware } = require('../middleware/auth');
 const upload = require('../middleware/upload');
 const router = express.Router();
 
-router.post('/', authMiddleware, upload.array('images', 4), submitAdoption);
+router.post('/', authMiddleware, submitAdoption);
 router.get('/', adminMiddleware, getAdoptions);
 router.patch('/:id', adminMiddleware, updateAdoption);
 router.delete('/:id', adminMiddleware, deleteAdoption);

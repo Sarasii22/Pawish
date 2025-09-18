@@ -2,7 +2,7 @@ const AdoptionRequest = require('../models/AdoptionRequest');
 
 exports.submitAdoption = async (req, res) => {
   try {
-    const { userId } = req.user;
+    const userId = req.user.id;
     const adoptionData = { ...req.body, userId };
     const adoption = new AdoptionRequest(adoptionData);
     await adoption.save();
