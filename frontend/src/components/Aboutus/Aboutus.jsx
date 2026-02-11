@@ -4,6 +4,7 @@ import aboutimg from "../../assets/about/about 1.png"; // Adjust the path as nec
 import helpedImage from "../../assets/about/paws.png"; // Adjust the path as necessary
 import donationsImage from "../../assets/about/donate.png"; // Adjust the path as necessary
 import activeImage from "../../assets/about/active.png"; // Adjust the path as necessary
+import { motion } from 'framer-motion'; // Added import
 
 const Aboutus = () => {
   return (
@@ -17,24 +18,29 @@ const Aboutus = () => {
   <img src={aboutimg} alt="About" />
       </div>
     </div>
-    <div className="about-cards-container">
-      <div className="about-card">
+    <motion.div 
+      className="about-cards-container"
+      initial={{ opacity: 0, x: -100 }} // Start hidden and from left
+      animate={{ opacity: 1, x: 0 }} // Slide in
+      transition={{ duration: 0.6, staggerChildren: 0.2 }} // Stagger child animations
+    >
+      <motion.div className="about-card" variants={{ initial: { opacity: 0 }, animate: { opacity: 1 } }}> {/* Child variant */}
         <img src={helpedImage} alt="helped" />
         <h1>1200 +</h1>
         <h4>Pets Helped</h4>
-      </div>
-  <div className="about-card">
+      </motion.div>
+  <motion.div className="about-card" variants={{ initial: { opacity: 0 }, animate: { opacity: 1 } }}>
         <img src={donationsImage} alt="donations" />
         <h1>$50K +</h1>
         <h4>Donations Raised</h4>
-      </div>
-  <div className="about-card">
+      </motion.div>
+  <motion.div className="about-card" variants={{ initial: { opacity: 0 }, animate: { opacity: 1 } }}>
         <img src={activeImage} alt="active" />
         <h1>500 +</h1>
         <h4>Active Campaigns</h4>
-      </div>
+      </motion.div>
       
-    </div>
+    </motion.div>
     </div>
   );
 }

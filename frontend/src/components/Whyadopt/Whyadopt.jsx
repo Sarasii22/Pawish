@@ -4,8 +4,15 @@ import whyAdoptImage from "../../assets/whyadopt/cat 2.jpg"; //
 import saveImage from "../../assets/about/paws.png"; // Adjust the path as necessary
 import unconditionalImage from "../../assets/whyadopt/heart.png"; // Adjust the path as necessary
 import findImage from "../../assets/whyadopt/search.png"; // Adjust the path as necessary
+import { useNavigate } from 'react-router-dom'; // Added import for navigation
 
 const Whyadopt = () => {
+    const navigate = useNavigate(); // Added hook to get navigate function
+
+    const handleAdoptClick = () => {
+        navigate('/application'); // Navigate to the adoption page
+    };
+
     return (
         <div className="why-adopt">
         <h2>Why Adopted a Pet ?</h2>
@@ -31,7 +38,7 @@ const Whyadopt = () => {
             </div>
         </div>
         <div className="adopt-button">
-            <button className="button">Adopt Now</button>
+            <button className="button" onClick={handleAdoptClick}>Adopt Now</button> {/* Added onClick handler */}
         </div>
         
         </div>

@@ -1,7 +1,4 @@
-
-
 .navbar {
-  
   background-color: var(--background-color1);
   display: flex;
   justify-content: space-between;
@@ -24,9 +21,9 @@
 }
 
 .nav-link {
-  
   text-decoration: none;
   font-size: 20px;
+  transition: color 0.3s ease; /* Added smooth transition */
 }
 
 .nav-link:hover {

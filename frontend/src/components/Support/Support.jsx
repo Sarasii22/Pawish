@@ -1,8 +1,15 @@
 import React from "react";
 import "./Support.css";
 import supportImage from "../../assets/support/donate us.png"; // Example image path
+import { useNavigate } from 'react-router-dom'; // Added import for navigation
 
 const Support = () => {
+    const navigate = useNavigate(); // Added hook to get navigate function
+
+    const handleDonateClick = () => {
+        navigate('/donate'); // Navigate to the donate page
+    };
+
     return (
         <div className="support">
         <div className="support-container">
@@ -24,7 +31,7 @@ const Support = () => {
             </div>
         </div>
         <div className="support-button">
-            <button className="button">Donate Now</button>
+            <button className="button" onClick={handleDonateClick}>Donate Now</button> {/* Added onClick handler */}
         </div>
         </div>
     );
