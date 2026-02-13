@@ -45,30 +45,30 @@ const AdminDashboard = () => {
       return;
     }
 
-    axios.get('http://localhost:5000/api/pets', {
+    axios.get('/api/pets', {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setPets(res.data)).catch(err => console.error('Error fetching pets:', err));
 
-    axios.get('http://localhost:5000/api/users', {
+    axios.get('/api/users', {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setUsers(res.data)).catch(err => console.error('Error fetching users:', err));
 
-    axios.get('http://localhost:5000/api/adoptions', {
+    axios.get('/api/adoptions', {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setApplications(res.data)).catch(err => console.error('Error fetching applications:', err));
 
-    axios.get('http://localhost:5000/api/alerts/pending', {
+    axios.get('/api/alerts/pending', {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setAlerts(res.data)).catch(err => console.error('Error fetching alerts:', err));
 
-    axios.get('http://localhost:5000/api/donations', {
+    axios.get('/api/donations', {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setDonations(res.data)).catch(err => console.error('Error fetching donations:', err));
   }, [navigate]);
 
   const handleDeletePet = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/pets/${id}`, {
+      await axios.delete(`/api/pets/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setPets(pets.filter(pet => pet._id !== id));
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
 
   const handleDeleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`, {
+      await axios.delete(`/api/users/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setUsers(users.filter(user => user._id !== id));
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
 
   const handleUpdateApplication = async (id, status) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/api/adoptions/${id}`, { status }, {
+      const res = await axios.patch(`/api/adoptions/${id}`, { status }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setApplications(applications.map(app => app._id === id ? res.data : app));
@@ -101,7 +101,7 @@ const AdminDashboard = () => {
 
   const handleDeleteApplication = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/adoptions/${id}`, {
+      await axios.delete(`/api/adoptions/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setApplications(applications.filter(app => app._id !== id));
@@ -112,14 +112,14 @@ const AdminDashboard = () => {
 
   const handleUpdateAlert = async (id, action) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/api/alerts/${id}/${action}`, {}, {
+      const res = await axios.patch(`/api/alerts/${id}/${action}`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setAlerts(alerts.filter(alert => alert._id !== id)); // Remove from pending list
       alert(res.data.message);
       if (action === 'approve') {
         // Optionally refresh pets to reflect new pet immediately
-        const petRes = await axios.get('http://localhost:5000/api/pets', {
+        const petRes = await axios.get('/api/pets', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         setPets(petRes.data);
@@ -131,7 +131,7 @@ const AdminDashboard = () => {
 
   const handleDeleteAlert = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/alerts/${id}`, {
+      await axios.delete(`/api/alerts/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setAlerts(alerts.filter(alert => alert._id !== id));
@@ -142,7 +142,7 @@ const AdminDashboard = () => {
 
   const handleDeleteDonation = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/donations/${id}`, {
+      await axios.delete(`/api/donations/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setDonations(donations.filter(donation => donation._id !== id));

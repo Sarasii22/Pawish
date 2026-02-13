@@ -35,7 +35,7 @@ const Donate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/donations', formData, {
+      const res = await axios.post('/api/donations', formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       alert(res.data.message);

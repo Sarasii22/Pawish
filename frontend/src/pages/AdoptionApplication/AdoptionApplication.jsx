@@ -21,7 +21,7 @@ const AdoptionApplication = () => {
   const { petId } = useParams();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/pets')
+    axios.get('/api/pets')
       .then(res => {
         setPets(res.data);
         if (petId) setFormData(prev => ({ ...prev, petId }));
@@ -44,7 +44,7 @@ const AdoptionApplication = () => {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:5000/api/adoptions', formData, {
+      const res = await axios.post('/api/adoptions', formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       alert(res.data.message);

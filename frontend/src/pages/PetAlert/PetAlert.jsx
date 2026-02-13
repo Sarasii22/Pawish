@@ -53,7 +53,7 @@ const PetAlert = () => {
     if (image2) data.append('images', image2);
     if (image3) data.append('images', image3);
     try {
-      const res = await axios.post('http://localhost:5000/api/alerts', data, {
+      const res = await axios.post('/api/alerts', data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       alert(res.data.message);

@@ -17,7 +17,7 @@ const Login = () => {
     try {
       const url = credentials.isAdmin ? '/api/auth/admin-login' : '/api/auth/login';
       const data = credentials.isAdmin ? { username: credentials.username, password: credentials.password } : { email: credentials.email, password: credentials.password };
-      const res = await axios.post(`http://localhost:5000${url}`, data);
+      const res = await axios.post(`/${url}`, data);
       localStorage.setItem('token', res.data.token);
       navigate(credentials.isAdmin ? '/admin' : '/homepage');
     } catch (err) {

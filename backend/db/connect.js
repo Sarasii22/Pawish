@@ -9,9 +9,13 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
     console.log('MongoDB connected successfully');
+
     const adminExists = await Admin.findOne({ username: 'admin' });
     if (!adminExists) {
-      const admin = new Admin({ username: 'admin', password: await bcrypt.hash('adminpass', 10) });
+      const admin = new Admin({
+        username: 'admin',
+        password: await bcrypt.hash('adminpass', 10)
+      });
       await admin.save();
       console.log('Admin created');
     }
