@@ -22,6 +22,6 @@
       "src": "/(.*)",
       "dest": "/frontend/build/$1"
     }
-  ]
-  
+  ],
+  "outputDirectory": "frontend/build"
 }
