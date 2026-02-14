@@ -18,7 +18,7 @@ import g8 from '../../assets/gallery/pet 8.png';
 const PetCard = ({ name, age, location, timeAgo, image, id }) => {
   return (
     <div className="pet-card">
-      <img src={image ? `/${image}` : '/placeholder.jpg'} alt={name} className="pet-image" />
+      <img src={image ? `http://localhost:5000/${image}` : '/placeholder.jpg'} alt={name} className="pet-image" />
       <div className="pet-info">
         <h3>{name}</h3>
         <p>Age: {age || 'Unknown'}</p>
@@ -51,7 +51,7 @@ const Pets = () => {
 
   const fetchPets = async () => {
     try {
-      const response = await axios.get('/api/pets');
+      const response = await axios.get('http://localhost:5000/api/pets');
       console.log('Fetched pets:', response.data); // Debug log
       setPets(response.data);
       setError(null);

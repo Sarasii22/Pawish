@@ -35,7 +35,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('/api/auth/signup', credentials);
+      const res = await axios.post('http://localhost:5000/api/auth/signup', credentials);
       localStorage.setItem('token', res.data.token);
       setSuccess(true);
       navigate('/homepage');
